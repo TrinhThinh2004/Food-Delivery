@@ -1,94 +1,67 @@
 .login {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    position: absolute; 
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+    display: grid;
 }
-
 .login-container {
-    background-color: #fff;
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    max-width: 90%;
-    text-align: center;
+    place-self: center;
+    width: max(23vw,330px);
+    color:#808080;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    animation: fadeIn 0.5s;
 }
-
-.login-title {
+.login-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    color:black; 
 }
-
-.login-title h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: tomato; 
-}
-
 .login-title img {
-    width: 20px;
-    height: 20px;
+    width:16px;
     cursor: pointer;
 }
-
-.login-inputs input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: tomato;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #e04e4e; 
-}
-
-.login-condition {
+.login-inputs{
     display: flex;
-    align-items: center;
-    margin-top: 15px;
-    font-size: 12px;
-    color: #666;
+    flex-direction: column;
+    gap: 20px;
 }
+.login-inputs input{
 
-.login-condition input {
-    margin-right: 10px;
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+    border-radius: 4px;
 }
-
-.login p {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #333;
-}
-
-.login p span {
-    color: tomato; 
+.login-container button{
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: tomato;
+    font-size: 15px;
     cursor: pointer;
-    text-decoration: underline;
+}
+.login-conditions{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: -15px;
 }
 
-.login p span:hover {
-    color: #e04e4e; 
+.login-conditions input{
+    margin-top: 5px;
+}
+.login p span{
+    color: tomato;
+    cursor: pointer;
+    font-weight: 500;
 }
