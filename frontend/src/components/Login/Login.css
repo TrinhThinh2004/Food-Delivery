@@ -1,0 +1,94 @@
+.login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.login-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-title h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: tomato; 
+}
+
+.login-title img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.login-inputs input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: tomato;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e04e4e; 
+}
+
+.login-condition {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #666;
+}
+
+.login-condition input {
+    margin-right: 10px;
+}
+
+.login p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login p span {
+    color: tomato; 
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.login p span:hover {
+    color: #e04e4e; 
+}
