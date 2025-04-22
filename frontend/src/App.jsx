@@ -1,27 +1,72 @@
 import React, { useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
-import Footer from "./Footer/Footer";
 import Login from "./components/Login/Login";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
+// import ManageFoods from "./pages/Admin/ManageFoods";
+import ManageUsers from "./pages/Admin/ManageUsers";
+import UserLayout from "./layouts/UserLayout";
+import AdminLayout from "./layouts/AdminLayout";
+
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
+
   return (
-  <>
-  {showLogin? <Login setShowLogin={setShowLogin} /> : <></>}
-  <div className="app">
-    <Navbar setShowLogin={setShowLogin}/>
     <Routes>
-      <Route path="/" element={<Home/>} /> 
-      <Route path="/cart" element={<Cart/>} />
-      <Route path="/order" element={<PlaceOrder/>} />
+      {/* Routes dành cho người dùng */}
+      <Route
+        path="/"
+        element={
+          <UserLayout setShowLogin={setShowLogin}>
+            <Home />
+          </UserLayout>
+        }
+      />
+      <Route
+        path="/cart"
+        element={
+          <UserLayout setShowLogin={setShowLogin}>
+            <Cart />
+          </UserLayout>
+        }
+      />
+      <Route
+        path="/order"
+        element={
+          <UserLayout setShowLogin={setShowLogin}>
+            <PlaceOrder />
+          </UserLayout>
+        }
+      />
+
+      {/* Routes dành cho admin */}
+      <Route
+        path="/admin"
+        element={
+          <AdminLayout>
+            <AdminDashboard />
+          </AdminLayout>
+        }
+      />
+      <Route
+        path="/admin/foods"
+        element={
+          <AdminLayout>
+            {/* <ManageFoods /> */}
+          </AdminLayout>
+        }
+      />
+      <Route
+        path="/admin/users"
+        element={
+          <AdminLayout>
+            <ManageUsers />
+          </AdminLayout>
+        }
+      />
     </Routes>
-    
-  </div>
-  <Footer/>
-  </>
   );
 };
 
