@@ -4,9 +4,9 @@ import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Login from "./components/Login/Login";
-import AdminDashboard from "./pages/Admin/AdminDashboard";
-// import ManageFoods from "./pages/Admin/ManageFoods";
-import ManageUsers from "./pages/Admin/ManageUsers";
+import Add from "./pages/Admin/Add/Add";
+import List from "./pages/Admin/List/List";
+import Orders from "./pages/Admin/Orders/Orders";
 import UserLayout from "./layouts/UserLayout";
 import AdminLayout from "./layouts/AdminLayout";
 
@@ -42,30 +42,11 @@ const App = () => {
       />
 
       {/* Routes dành cho admin */}
-      <Route
-        path="/admin"
-        element={
-          <AdminLayout>
-            <AdminDashboard />
-          </AdminLayout>
-        }
-      />
-      <Route
-        path="/admin/foods"
-        element={
-          <AdminLayout>
-            {/* <ManageFoods /> */}
-          </AdminLayout>
-        }
-      />
-      <Route
-        path="/admin/users"
-        element={
-          <AdminLayout>
-            <ManageUsers />
-          </AdminLayout>
-        }
-      />
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route path="add" element={<Add/>} />
+        <Route path="list" element={<List/>} />
+        <Route path="orders" element={<Orders/>} />
+      </Route>
     </Routes>
   );
 };

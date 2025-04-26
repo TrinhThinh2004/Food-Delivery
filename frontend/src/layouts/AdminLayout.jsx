@@ -1,32 +1,19 @@
 import React from "react";
 import "./AdminLayout.css";
-import { assets } from "../assets/assets"; // Đảm bảo bạn đã import đúng file assets
+import NavbarAD from "../pages/Admin/NavbarAD/NavbarAD";
+import SidebarAD from "../pages/Admin/SidebarAD/SidebarAD";
+import { Outlet } from "react-router-dom";
 
-const AdminLayout = ({ children }) => {
+const AdminLayout = () => {
   return (
     <div className="admin-layout">
-      <div className="admin-sidebar">
-        <h2>Tomato.</h2>
-        <ul>
-          <li>
-            <img src={assets.add_icon_white} alt="Add Items" />
-            <span>Add Items</span>
-          </li>
-          <li>
-            <img src={assets.add_icon_white} alt="List Items" />
-            <span>List Items</span>
-          </li>
-          <li>
-            <img src={assets.add_icon_white} alt="Orders" />
-            <span>Orders</span>
-          </li>
-        </ul>
-      </div>
-      <div className="admin-main">
-        <div className="admin-header">
-          <h1>Admin Panel</h1>
+      <NavbarAD />
+      <hr />
+      <div className="app-content">
+        <SidebarAD />
+        <div className="admin-main-content">
+          <Outlet />
         </div>
-        <div className="admin-content">{children}</div>
       </div>
     </div>
   );
