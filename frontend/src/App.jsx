@@ -9,11 +9,24 @@ import List from "./pages/Admin/List/List";
 import Orders from "./pages/Admin/Orders/Orders";
 import UserLayout from "./layouts/UserLayout";
 import AdminLayout from "./layouts/AdminLayout";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
 
   return (
+    <><ToastContainer
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+  />
     <Routes>
       {/* Routes dành cho người dùng */}
       <Route
@@ -48,6 +61,7 @@ const App = () => {
         <Route path="orders" element={<Orders/>} />
       </Route>
     </Routes>
+    </>
   );
 };
 

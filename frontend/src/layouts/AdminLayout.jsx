@@ -7,6 +7,7 @@ import { Outlet } from "react-router-dom";
 const AdminLayout = () => {
   return (
     <div className="admin-layout">
+      
       <NavbarAD />
       <hr />
       <div className="app-content">
