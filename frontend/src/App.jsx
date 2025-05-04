@@ -13,6 +13,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
+  const url="http://localhost:4000";
 
   return (
     <><ToastContainer
@@ -56,9 +57,9 @@ const App = () => {
 
       {/* Routes dành cho admin */}
       <Route path="/admin" element={<AdminLayout />}>
-        <Route path="add" element={<Add/>} />
-        <Route path="list" element={<List/>} />
-        <Route path="orders" element={<Orders/>} />
+        <Route path="add" element={<Add url={url} />} />
+        <Route path="list" element={<List url={url}/>} />
+        <Route path="orders" element={<Orders url={url}/>} />
       </Route>
     </Routes>
     </>
