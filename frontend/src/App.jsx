@@ -28,6 +28,7 @@ const App = () => {
     pauseOnHover
     theme="light"
   />
+  {showLogin && <Login setShowLogin={setShowLogin} />}
     <Routes>
       {/* Routes dành cho người dùng */}
       <Route
