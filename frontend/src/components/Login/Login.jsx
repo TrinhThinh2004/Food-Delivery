@@ -3,7 +3,9 @@ import "./Login.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Login = ({ setShowLogin }) => {
+  const navigate = useNavigate();
   const {url,setToken}=useContext(StoreContext)
   const [currState, setCurrState] = useState("Login");
   const [data, setData] = useState({
@@ -30,9 +32,16 @@ const Login = ({ setShowLogin }) => {
     if(result.success){
       setToken(result.token);
       localStorage.setItem("token", result.token);
+      localStorage.setItem("isAdmin", result.isAdmin);
       setShowLogin(false);
-    }
-    else{
+      
+      if (result.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      };
+    
+    } else {
       alert(result.message);
     }
   };

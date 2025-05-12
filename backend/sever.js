@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
-import userRouter from "./routes/userRoute.js";
+import userRouter from "./routes/UserRoute.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -29,4 +29,4 @@ app.use("/api/user", userRouter);
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-//mongodb+srv://trinhthinh:123456789a@@cluster0.hgchyaw.mongodb.net/?
+

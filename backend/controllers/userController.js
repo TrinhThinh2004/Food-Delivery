@@ -29,19 +29,18 @@ const loginUser = async (req, res) => {
         .status(400)
         .json({ success: false, message: "Invalid credentials" });
     }
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET, {
       expiresIn: "30d",
     });
-    res.status(200).json({ success: true, token, userId: user._id });
+    res.status(200).json({ success: true, token, isAdmin: user.isAdmin }); // Trả về isAdmin
   } catch (error) {
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
 //register user
 const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, isAdmin } = req.body;
   try {
     if (!name || !email || !password) {
       return res
@@ -67,14 +66,16 @@ const registerUser = async (req, res) => {
       name:name,
       email:email,
       password: hashedPassword,
+      isAdmin:isAdmin,
     });
     await user.save();
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET, {
       expiresIn: "30d",
     }); 
+    
     res
       .status(201)
-      .json({ success: true,token, message: "User registered successfully" });
+      .json({ success: true, token, isAdmin: user.isAdmin });
   } catch (error) {
     console.log(error);
     res.status(500).json({ success: false, message: error.message });

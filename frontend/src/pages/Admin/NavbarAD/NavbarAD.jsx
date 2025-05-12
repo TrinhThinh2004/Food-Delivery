@@ -2,6 +2,7 @@ import React from "react";
 import "./NavbarAD.css";
 import {assetsAD} from "../../../admin_assets/assetsAD.js";
 
+
 const Navbar = () => {
   return (
     <div className="navbar">
