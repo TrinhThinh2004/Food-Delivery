@@ -11,6 +11,7 @@ const Cart = () => {
     addToCart,
     getTotalCartAmount,
     removeAll,
+    url,
   } = useContext(StoreContext);
   const totalQuantity = Object.keys(cartItems).reduce((total, itemId) => {
     return total + cartItems[itemId];
@@ -35,7 +36,7 @@ const Cart = () => {
             return (
               <div key={index}>
                 <div className="cart-items-title cart-items-item">
-                  <img src={item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p className="quantity-controls">
