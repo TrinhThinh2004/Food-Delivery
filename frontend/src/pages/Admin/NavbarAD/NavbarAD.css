@@ -1,14 +1,43 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 4px;
 }
-.navbar .logo{
-    width:max(10%,80px);
-   
+
+.navbar .logo {
+    width: max(10%, 80px);
 }
-.navbar .profile{
+
+.navbar .profile {
+    position: relative;
     width: 50px;
     border-radius: 50%;
+}
+
+.navbar .profile-image {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.navbar .logout {
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    background-color: white;
+    border: 1px solid tomato;
+     outline: 2px solid white;
+    display: none;
+    z-index: 1;
+    cursor: pointer;
+    
+}
+
+.navbar .profile:hover .logout {
+    display: block;
+}
+.navbar .logout:hover {
+    color: tomato;
 }

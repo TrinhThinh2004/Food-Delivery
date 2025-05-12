@@ -69,6 +69,7 @@
     border-radius: 8px;
     border: 1px solid tomato;
     outline: 2px solid white;
+    
     list-style: none;
 }
 .nav-profile-dropdown li{
