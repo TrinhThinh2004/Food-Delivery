@@ -26,6 +26,7 @@ app.use("/api/food", foodRouter);
 app.use("/images", express.static("uploads"));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

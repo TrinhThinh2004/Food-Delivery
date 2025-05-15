@@ -32,7 +32,7 @@ const loginUser = async (req, res) => {
     const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET, {
       expiresIn: "30d",
     });
-    res.status(200).json({ success: true, token, isAdmin: user.isAdmin }); // Trả về isAdmin
+    res.status(200).json({ success: true, token, isAdmin: user.isAdmin }); 
   } catch (error) {
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
