@@ -5,6 +5,7 @@ import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/UserRoute.js";
 import dotenv from "dotenv";
 import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
 dotenv.config();
 // app config
 const app = express();
