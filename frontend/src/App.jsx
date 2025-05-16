@@ -11,6 +11,7 @@ import UserLayout from "./layouts/UserLayout";
 import AdminLayout from "./layouts/AdminLayout";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Verify from "./pages/Verify/Verify";
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const url="http://localhost:4000";
@@ -52,6 +53,14 @@ const App = () => {
         element={
           <UserLayout setShowLogin={setShowLogin}>
             <PlaceOrder />
+          </UserLayout>
+        }
+      />
+      <Route
+        path="/verify"
+        element={
+          <UserLayout setShowLogin={setShowLogin}>
+            <Verify />
           </UserLayout>
         }
       />
