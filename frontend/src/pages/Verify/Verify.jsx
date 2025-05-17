@@ -17,10 +17,10 @@ const Verify = () => {
             success,
             orderId,
         });
-        const data = await response.data;
-        if (data.success) {
+      
+        if (response.data.success) {
             alert("Payment successful");
-            navigate("/order");
+            navigate("/myorders");
         } else {
             alert("Payment failed");
             navigate("/");
