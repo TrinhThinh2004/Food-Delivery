@@ -94,5 +94,18 @@ const userOrders= async (req, res) => {
         res.status(500).json({ success: false, message: "Internal server error" });
     }
 };
-
-export { placeOrder, verifyOrder, userOrders };
+// admin order
+const listOrders = async (req, res) => {
+    try {
+        const orders = await orderModel.find();
+        if (orders.length > 0) {
+            res.status(200).json({ success: true, data: orders });
+        } else {
+            res.status(404).json({ success: false, message: "No orders found" });
+        }
+    } catch (error) {
+        console.error("Error fetching orders:", error);
+        res.status(500).json({ success: false, message: "Internal server error" });
+    }
+}
+export { placeOrder, verifyOrder, userOrders , listOrders };
