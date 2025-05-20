@@ -64,9 +64,11 @@ This is an online food ordering web application consisting of two parts: **Backe
 - `POST /api/cart/add` — Add to cart
 - `POST /api/order/place` — Place order
 - `POST /api/order/verify` — Verify payment
+- `POST /api/order/status` — Update order status
 - `POST /api/order/userorders` — Get user's orders
 - `GET /api/order/list` — Get all orders (admin)
 - `GET /api/food/list` — Get food list
+- 
 
 ---
 
