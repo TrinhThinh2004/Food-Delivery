@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import UserChat from "../components/Chat/UserChat";
 
 const UserLayout = ({ children, setShowLogin }) => {
   return (
@@ -10,6 +11,7 @@ const UserLayout = ({ children, setShowLogin }) => {
       <div>{children}</div>
       
       </div>
+      <UserChat />
       <Footer />
     </>
   );

@@ -13,6 +13,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Verify from "./pages/Verify/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
+import UserChat from "./components/Chat/userchat";
+import AdminChat from "./pages/Admin/Chat/adminchat";
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const url="http://localhost:4000";
@@ -33,6 +35,14 @@ const App = () => {
   {showLogin && <Login setShowLogin={setShowLogin} />}
     <Routes>
       {/* Routes dành cho người dùng */}
+      <Route
+          path="/chat"
+          element={
+            <UserLayout setShowLogin={setShowLogin}>
+              <UserChat />
+            </UserLayout>
+          }
+        />
       <Route
         path="/"
         element={
@@ -78,6 +88,7 @@ const App = () => {
         <Route path="add" element={<Add url={url} />} />
         <Route path="list" element={<List url={url}/>} />
         <Route path="orders" element={<Orders url={url}/>} />
+         <Route path="chat" element={<AdminChat  url={url}/>} />
       </Route>
     </Routes>
     </>

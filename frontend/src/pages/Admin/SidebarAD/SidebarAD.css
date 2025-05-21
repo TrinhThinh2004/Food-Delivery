@@ -19,8 +19,14 @@
     border:1px solid #a9a9a9;
     padding: 8px 10px;
     border-radius: 5px 0 0 5px;
+    
 }
 .sidebar-option.active{
     background-color: #fff0ed;
     border-color:tomato;
+}
+.sidebar-option img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }

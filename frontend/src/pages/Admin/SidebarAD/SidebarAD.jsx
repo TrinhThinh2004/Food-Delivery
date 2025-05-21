@@ -18,7 +18,11 @@ const SidebarAD = () => {
           <img src={assetsAD.order_icon}/>
           <p>Orders</p>
         </NavLink>
-        </div>      
+        <NavLink to='chat' className="sidebar-option">
+          <img src={assetsAD.chat_icon}/>
+          <p>Chat</p>
+        </NavLink>
+      </div>      
     </div>
   )
 }
