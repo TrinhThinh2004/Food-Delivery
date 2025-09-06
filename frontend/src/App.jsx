@@ -85,7 +85,7 @@ const App = () => {
       />
       {/* Routes dành cho admin */}
       <Route path="/admin" element={<AdminLayout />}>
-        {/* <Route path="add" element={<Add url={url} />} /> */}
+        <Route path="add" element={<Add url={url} />} />
         <Route path="list" element={<List url={url}/>} />
         <Route path="orders" element={<Orders url={url}/>} />
          <Route path="chat" element={<AdminChat  url={url}/>} />
