@@ -7,7 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --fix",
+    "preview": "vite preview",
+    "test": "echo 'No tests configured yet'",
+    "test:watch": "echo 'No tests configured yet'",
+    "test:coverage": "echo 'No tests configured yet'",
+    "docker:build": "docker build -t food-delivery-frontend .",
+    "docker:run": "docker run -p 3000:80 food-delivery-frontend",
+    "type-check": "echo 'No TypeScript configured yet'"
   },
   "dependencies": {
     "axios": "^1.8.4",
