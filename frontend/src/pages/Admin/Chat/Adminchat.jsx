@@ -16,7 +16,10 @@ const AdminChat = () => {
     setConnected(true);
 
     socketRef.current.on("private_message", (msg) => {
-      setMessages((prev) => [...prev, { sender: msg.sender, text: msg.content }]);
+      setMessages((prev) => [
+        ...prev,
+        { sender: msg.sender, text: msg.content },
+      ]);
     });
   };
 
@@ -72,7 +75,7 @@ const AdminChat = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Enter message..."
-              onKeyDown={e => e.key === "Enter" && sendPrivateMessage()}
+              onKeyDown={(e) => e.key === "Enter" && sendPrivateMessage()}
             />
             <button onClick={sendPrivateMessage}>Send</button>
           </div>

@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "sever.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node sever.js",
-    "server": "nodemon sever.js",
-    "dev": "nodemon sever.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "dev": "nodemon server.js",
     "build": "echo 'No build step required for Node.js'",
     "test": "echo 'No tests configured yet'",
     "test:watch": "echo 'No tests configured yet'",

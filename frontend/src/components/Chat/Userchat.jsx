@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { io } from "socket.io-client";
-import "./userchat.css";
+import "./UserChat.css";
 
 const SOCKET_URL = "http://localhost:4000";
 
@@ -19,7 +19,10 @@ const UserChat = () => {
       socketRef.current.emit("register", username);
 
       socketRef.current.on("private_message", (msg) => {
-        setMessages((prev) => [...prev, { sender: msg.sender, text: msg.content }]);
+        setMessages((prev) => [
+          ...prev,
+          { sender: msg.sender, text: msg.content },
+        ]);
       });
 
       return () => {
@@ -70,7 +73,9 @@ const UserChat = () => {
                   {messages.map((msg, index) => (
                     <li
                       key={index}
-                      className={msg.sender === username ? "msg-right" : "msg-left"}
+                      className={
+                        msg.sender === username ? "msg-right" : "msg-left"
+                      }
                     >
                       <span className="sender">{msg.sender}:</span>{" "}
                       <span>{msg.text}</span>

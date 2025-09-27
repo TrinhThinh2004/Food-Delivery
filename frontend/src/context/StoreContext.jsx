@@ -41,19 +41,19 @@ const StoreContextProvider = (props) => {
     }
   };
   const removeAll = async (itemId) => {
-  if (token) {
-    await axios.post(
-      url + "/api/cart/delete",
-      { itemId },
-      { headers: { token } }
-    );
-    await loadCartData();
-  } else {
-    const newCartItems = { ...cartItems };
-    delete newCartItems[itemId];
-    setCartItems(newCartItems);
-  }
-};
+    if (token) {
+      await axios.post(
+        url + "/api/cart/delete",
+        { itemId },
+        { headers: { token } }
+      );
+      await loadCartData();
+    } else {
+      const newCartItems = { ...cartItems };
+      delete newCartItems[itemId];
+      setCartItems(newCartItems);
+    }
+  };
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {

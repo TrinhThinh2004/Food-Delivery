@@ -1,5 +1,6 @@
 # Food Delivery Web Application
 
+![Home](public/home.png)
 This is a full-stack online food ordering web application, including a **Backend** (Node.js, Express, MongoDB, Socket.IO) and a **Frontend** (React, Vite). The app allows users to browse food, manage their cart, place orders, pay via Stripe, track orders, and includes an admin management system with real-time chat support.
 
 ---
@@ -7,6 +8,7 @@ This is a full-stack online food ordering web application, including a **Backend
 ## 🚀 Main Features
 
 ### User
+
 - Register, login, and JWT authentication.
 - Browse food menu, search, and filter by category.
 - Add/remove food items to/from cart.
@@ -16,6 +18,7 @@ This is a full-stack online food ordering web application, including a **Backend
 - **Real-time chat with admin (WebSocket, Socket.IO).**
 
 ### Admin
+
 - Login with admin privileges.
 - Manage food menu (add, edit, delete).
 - View and manage all orders.
@@ -29,33 +32,33 @@ This is a full-stack online food ordering web application, including a **Backend
 ### 1. Backend
 
 - Install dependencies:
-    ```bash
-    cd backend
-    npm install
-    ```
+  ```bash
+  cd backend
+  npm install
+  ```
 - Create a `.env` file with the following content:
-    ```
-    PORT=4000
-    MONGO_URI=your_mongodb_uri
-    JWT_SECRET=your_jwt_secret
-    STRIPE_SECRET_KEY=your_stripe_secret_key
-    ```
+  ```
+  PORT=4000
+  MONGO_URI=your_mongodb_uri
+  JWT_SECRET=your_jwt_secret
+  STRIPE_SECRET_KEY=your_stripe_secret_key
+  ```
 - Start the server:
-    ```bash
-    npm run server
-    ```
+  ```bash
+  npm run server
+  ```
 
 ### 2. Frontend
 
 - Install dependencies:
-    ```bash
-    cd frontend
-    npm install
-    ```
+  ```bash
+  cd frontend
+  npm install
+  ```
 - Start the app:
-    ```bash
-    npm run dev
-    ```
+  ```bash
+  npm run dev
+  ```
 
 ---
 
@@ -64,10 +67,10 @@ This is a full-stack online food ordering web application, including a **Backend
 - **Technology:** Socket.IO (Node.js backend & React frontend)
 - **Authentication:** Only logged-in users (via JWT) can use chat.
 - **How it works:**
-    - After login, the frontend connects to the backend Socket.IO server and authenticates using the JWT token.
-    - Users and admin can send/receive private messages in real-time.
-    - Each user joins a private room based on their username or user ID.
-    - The backend verifies the JWT token before allowing chat actions.
+  - After login, the frontend connects to the backend Socket.IO server and authenticates using the JWT token.
+  - Users and admin can send/receive private messages in real-time.
+  - Each user joins a private room based on their username or user ID.
+  - The backend verifies the JWT token before allowing chat actions.
 
 ---
 
