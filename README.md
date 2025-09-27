@@ -1,6 +1,7 @@
 # Food Delivery Web Application
 
 ![Home](public/home.png)
+
 This is a full-stack online food ordering web application, including a **Backend** (Node.js, Express, MongoDB, Socket.IO) and a **Frontend** (React, Vite). The app allows users to browse food, manage their cart, place orders, pay via Stripe, track orders, and includes an admin management system with real-time chat support.
 
 ---
